@@ -1,10 +1,26 @@
 {
-    "parser":"babel-eslint",
-    "rules": {
-        "no-console":"warn",
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"],
-        "eol-last":0
-    },
-    "extends":["airbnb-base"]
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "eol-last": 0,
+    "no-unused-vars": 0,
+    "class-methods-use-this": 0,
+    "max-len": [1, 120, 2, { "ignoreComments": true }],
+    "linebreak-style": ["error", "windows"]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js",".jsx",".vue"]
+      }
+    }
+  },
+  "extends": ["airbnb-base"]
 }
