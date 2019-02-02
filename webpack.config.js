@@ -23,12 +23,6 @@ var config = {
         exclude: /node_modules/,
         include: /src/,
         use: "babel-loader",
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        include: /src/,
-        use: "eslint-loader",
       }
     ]
   }
