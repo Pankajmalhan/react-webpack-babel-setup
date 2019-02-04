@@ -5,7 +5,7 @@ class Main extends React.Component {
   data = () => {};
 
   render() {
-    return <h2>Hello React  !!!</h2>;
+    return <h2>Hello React  !!!1200</h2>;
   }
 }
 
