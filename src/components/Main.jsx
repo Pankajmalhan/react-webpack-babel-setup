@@ -6,7 +6,15 @@ class Main extends React.Component {
 
   method = () => {
     const abc = 1200;
+  };
+
+  method1 = () => {
+    const abc = 1200;
   }
+  
+  method2 = () => {
+    const abc = 1200;
+  };
 
   render() {
     return <h2>Hello React !!!</h2>;
