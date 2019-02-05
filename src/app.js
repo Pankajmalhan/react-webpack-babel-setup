@@ -2,4 +2,5 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Main from "./components/Main";
 
+console.log("pankaj");
 ReactDOM.render(<Main name="1200" />, document.getElementById("app"));
