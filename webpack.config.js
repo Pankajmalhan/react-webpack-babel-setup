@@ -47,6 +47,8 @@ const config = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
+        include: /src/,
         use: ["style-loader", "css-loader"],
       },
       {

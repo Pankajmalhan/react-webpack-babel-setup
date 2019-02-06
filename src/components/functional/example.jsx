@@ -1,14 +1,9 @@
-import React, { useState, memo } from "react";
+import React from "react";
 
-const Example = memo((props) => {
-  const [count, setCount] = useState(0);
-  console.log("render");
+export default function Example() {
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <h2>dfgdfg</h2>
     </div>
   );
-});
-
-export default Example;
+}
