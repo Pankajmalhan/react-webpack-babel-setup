@@ -1,5 +1,8 @@
 {
   "parser": "babel-eslint",
+  "plugins": [
+    "react-hooks"
+  ],
   "rules": {
     "no-console": "warn",
     "semi": ["error", "always"],
@@ -8,7 +11,8 @@
     "no-unused-vars": 0,
     "class-methods-use-this": 0,
     "max-len": [1, 120, 2, { "ignoreComments": true }],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    "react-hooks/rules-of-hooks": "error"
   },
   "env": {
     "browser": true,

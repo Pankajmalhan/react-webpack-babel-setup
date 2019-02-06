@@ -1,21 +1,36 @@
-var path = require("path");
-var srcPath = path.resolve(__dirname, "src");
-var distPath = path.resolve(__dirname, "dist");
+const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-var config = {
+const srcPath = path.resolve(__dirname, "src");
+const distPath = path.resolve(__dirname, "dist");
+
+const config = {
   entry: [path.resolve(srcPath, "app.js")],
   output: {
     path: distPath,
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "/",
   },
   devServer: {
     inline: true,
-    port: 4500
+    port: 4500,
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: "src/assets/images/",
+        to: "src/assets/images/",
+      },
+    ]),
+    new HtmlWebPackPlugin({
+      template: "index.html",
+      filename: "index.html",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -29,9 +44,27 @@ var config = {
         exclude: /node_modules/,
         include: /src/,
         use: "eslint-loader",
-      }
-    ]
-  }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg|jpg)$/,
+        exclude: /node_modules/,
+        include: /client/,
+        loader: ["url-loader?limit=100000"],
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 module.exports = config;
